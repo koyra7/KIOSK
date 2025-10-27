@@ -54,7 +54,7 @@ public class Kiosk {
                 String str = sc.nextLine().trim(); // hi hello >> hihello
                 int object = Integer.parseInt(str);  // "1 -> 1 ,h -> 50, e-> 57, llo" -> "1" 보다 매우 높은 숫자
 //                String.valueOf(변수명); // String -> int 변환
-                if (object >= 0 && object <= 4) {
+                if (object >= 0 && object <= 4) { //0~4까지만 입력받음
                     switch (object) {
                         case 1:
                             System.out.println("선택한 메뉴: " + getMenuItems().get(0).name + " | W " + getMenuItems().get(0).price + " | " + getMenuItems().get(0).info);
@@ -77,10 +77,10 @@ public class Kiosk {
                             flag = false;
                             break;
                     }
-                } else {
+                } else { // 0~4 이외의 숫자는 문자 안내후 재입력
                     System.out.println(" 0~4 이내의 숫자를 입력해주세요. ");
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) { //숫자가 아닌값 들어오면 문자 출력 후 재입력
                 System.out.println(" 숫자만 입력해주세요. ");
             }
         }
