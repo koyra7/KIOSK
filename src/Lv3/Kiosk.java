@@ -2,14 +2,14 @@ package Lv3;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Scanner;
 
 public class Kiosk {
 
 
     // 속
     private ArrayList<MenuItem> menuitems = new ArrayList<>();
-    Menu menu = new Menu();
+    Scanner sc = new Scanner(System.in);
 
     //생
     public Kiosk() {
@@ -32,6 +32,58 @@ public class Kiosk {
         return menuitems;
     }
 
-    //
+    // 기능
+
+    public void Start() {
+        boolean flag = true;
+        while (flag) {
+            // 가게 메뉴 출력
+            System.out.println("[ SHACKESHACK MENU ]");
+
+            // 반복문으로 본메뉴 출력
+            for (int i = 0; i < 4; i++) {
+                int j = i + 1;
+
+                System.out.println(j + ". " + getMenuItems().get(i).name + " | W " + getMenuItems().get(i).price + " | " + getMenuItems().get(i).info);
+
+            }
+            System.out.println("0. 종료");
+
+            // 메뉴 번호 입력받음
+            try {
+                String str = sc.nextLine().trim(); // hi hello >> hihello
+                int object = Integer.parseInt(str);  // "1 -> 1 ,h -> 50, e-> 57, llo" -> "1" 보다 매우 높은 숫자
+//                String.valueOf(변수명); // String -> int 변환
+                if (object >= 0 && object <= 4) {
+                    switch (object) {
+                        case 1:
+                            System.out.println("선택한 메뉴: " + getMenuItems().get(0).name + " | W " + getMenuItems().get(0).price + " | " + getMenuItems().get(0).info);
+                            flag = false;
+                            break;
+                        case 2:
+                            System.out.println("선택한 메뉴: " + getMenuItems().get(0).name + " | W " + getMenuItems().get(0).price + " | " + getMenuItems().get(0).info);
+                            flag = false;
+                            break;
+                        case 3:
+                            System.out.println("선택한 메뉴: " + getMenuItems().get(0).name + " | W " + getMenuItems().get(0).price + " | " + getMenuItems().get(0).info);
+                            flag = false;
+                            break;
+                        case 4:
+                            System.out.println("선택한 메뉴: " + getMenuItems().get(0).name + " | W " + getMenuItems().get(0).price + " | " + getMenuItems().get(0).info);
+                            flag = false;
+                            break;
+                        case 0:
+                            System.out.println("프로그램을 종료합니다.");
+                            flag = false;
+                            break;
+                    }
+                } else {
+                    System.out.println(" 0~4 이내의 숫자를 입력해주세요. ");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(" 숫자만 입력해주세요. ");
+            }
+        }
+    }
 
 }
