@@ -15,7 +15,7 @@ public class Main {
         Kiosk kiosk = new Kiosk();
 
         // 저장된 데이터 불러오기
-        kiosk.initItem();
+        kiosk.initItem(); // 메뉴로 변경
         kiosk.Start();
 
     }
