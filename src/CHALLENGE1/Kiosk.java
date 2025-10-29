@@ -1,8 +1,7 @@
-package Lv5;
+package CHALLENGE1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.*;
 
 public class Kiosk {
 
@@ -12,8 +11,6 @@ public class Kiosk {
     Scanner sc = new Scanner(System.in);
     Menu menu = new Menu(); // 클래스 변수명 = new 생성자  -> new 생성자로 Menu에 있는 16라인 생성자 호출 하여 이용
 
-    List<String> Carts = new ArrayList<String>();
-    int number;
 
     // 기능
     public void kategori() {
@@ -26,15 +23,6 @@ public class Kiosk {
             System.out.println((j + ". " + menu.getCateGori().get(i) ));
         }
         System.out.println("0. 종료");
-
-        if(!Carts.isEmpty()) {
-            System.out.println(" [ ORDER MENU ] ");
-
-            for(int i = 3; i < 5; i++) {
-                int j = i + 1;
-                System.out.println((j + ". " + menu.getCateGori().get(i) ));
-            }
-        }
     }
 
     public void Start() {
@@ -61,22 +49,18 @@ public class Kiosk {
                     switch (object) {
                         case 1:
                             System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
-                            number = 1;
                             flag = false;
                             break;
                         case 2:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(1).getName() + " | W " + menu.getMenuItems().get(1).getPrice() + " | " + menu.getMenuItems().get(1).getInfo());
-                            number = 2;
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
                             flag = false;
                             break;
                         case 3:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(2).getName() + " | W " + menu.getMenuItems().get(2).getPrice() + " | " + menu.getMenuItems().get(2).getInfo());
-                            number = 3;
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
                             flag = false;
                             break;
                         case 4:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(3).getName() + " | W " + menu.getMenuItems().get(3).getPrice() + " | " + menu.getMenuItems().get(3).getInfo());
-                            number = 4;
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
                             flag = false;
                             break;
                         case 0:
@@ -91,29 +75,6 @@ public class Kiosk {
                 System.out.println(" 숫자만 입력해주세요. ");
             }
         }
-
-    }
-    public void Cart() {
-
-        System.out.println(menu.getMenuItems().get(number - 1).getName() + " | W " + menu.getMenuItems().get(number - 1).getPrice() + " | " + menu.getMenuItems().get(number - 1).getInfo());
-        System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
-        System.out.println(" 1. 확인     2. 취소 ");
-
-        // 입력받기
-        String str = sc.nextLine().trim();
-        int object = Integer.parseInt(str);
-        try {
-            if(object == 1) {
-                System.out.println(menu.getMenuItems().get(number-1).getName() + "이 장바구니에 추가되었습니다.");
-                Carts.add(menu.getMenuItems().get(number-1).getName() + " |  W " + menu.getMenuItems().get(number-1).getPrice() + " |  " + menu.getMenuItems().get(number-1).getInfo());
-
-            } else if (object == 2) {
-                System.out.println("취소되었습니다.");
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("숫자를 입력해주세요.");
-        }
-
     }
 
 }

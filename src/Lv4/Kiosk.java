@@ -52,15 +52,15 @@ public class Kiosk {
                             flag = false;
                             break;
                         case 2:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(1).getName() + " | W " + menu.getMenuItems().get(1).getPrice() + " | " + menu.getMenuItems().get(1).getInfo());
                             flag = false;
                             break;
                         case 3:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(2).getName() + " | W " + menu.getMenuItems().get(2).getPrice() + " | " + menu.getMenuItems().get(2).getInfo());
                             flag = false;
                             break;
                         case 4:
-                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(0).getName() + " | W " + menu.getMenuItems().get(0).getPrice() + " | " + menu.getMenuItems().get(0).getInfo());
+                            System.out.println("선택한 메뉴: " + menu.getMenuItems().get(3).getName() + " | W " + menu.getMenuItems().get(3).getPrice() + " | " + menu.getMenuItems().get(3).getInfo());
                             flag = false;
                             break;
                         case 0:
