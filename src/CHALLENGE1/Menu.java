@@ -27,6 +27,8 @@ public class Menu {
         cateGori.add("Burgers");
         cateGori.add("Drinks");
         cateGori.add("Desserts");
+        cateGori.add("Orders");
+        cateGori.add("Cancel");
     }
 
     //getter 캡슐화에 따른 간접접근 게터 생성
